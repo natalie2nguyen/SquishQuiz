@@ -1,3 +1,29 @@
 <resources>
+    <string name="name"> Please enter your name </string>
+    <string name="ready"> Ready!</string>
     <string name="app_name">Squish Quiz</string>
+    <string name="which_set"> Which set would you like to study? </string>
+    <string name="countries"> Countries </string>
+    <string name="cities"> Cities </string>
+    <string name="food_beverage"> Food and Beverage </string>
+    <string name="general"> General Knowledge </string>
+    <string name="my_sets"> My Sets </string>
+    <string name="addSets"> Make my own </string>
+    <string name="points"> My Points </string>
+    <string name="total_questions"> Total Questions </string>
+    <string name="flag"> Flag </string>
+    <string name="next"> Go next </string>
+    <string name="back"> Go back </string>
+    <string name="vietnam"> Vietnam </string>
+    <string name="kuwait"> Kuwait </string>
+    <string name="south_korea"> South Korea </string>
+    <string name="senegal"> Senegal </string>
+    <string name="ireland"> Ireland </string>
+    <string name="argentina"> Argentina </string>
+    <string name="italy"> Italy </string>
+    <string name="mexico"> Mexico </string>
+    <string name="somalia"> Somalia </string>
+    <string name="singapore"> Singapore </string>
+    <string name="country_question"> Which country does this flag belong to? </string>
+    <string name="go_home"> Home </string>
 </resources>
