@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SquishQuiz"
         tools:targetApi="31">
         <activity
+            android:name=".CitiesQuiz"
+            android:exported="false" />
+        <activity
             android:name=".CountriesQuiz"
             android:exported="false" />
         <activity

@@ -54,6 +54,7 @@
         android:layout_height="53dp"
         android:backgroundTint="@color/yellow"
         android:text="@string/cities"
+        android:onClick="goCitiesQuiz"
         android:textSize="20sp"
         android:layout_marginTop="75dp"
         app:layout_constraintBottom_toBottomOf="parent"

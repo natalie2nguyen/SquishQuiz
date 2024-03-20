@@ -4,20 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CountriesQuiz">
-
-    <ImageView
-        android:id="@+id/flagImage"
-        android:layout_width="484dp"
-        android:layout_height="318dp"
-        android:contentDescription="@string/flag"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06"
-        app:srcCompat="@mipmap/vietnam_flag_foreground" />
+    tools:context=".CitiesQuiz">
 
     <LinearLayout
         android:layout_width="411dp"
@@ -25,10 +12,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795">
+        app:layout_constraintVertical_bias="0.758">
 
         <Button
             android:id="@+id/optionA"
@@ -74,7 +61,6 @@
         android:layout_height="41dp"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="20dp"
-        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.204"
@@ -97,14 +83,14 @@
         app:srcCompat="@drawable/arrow" />
 
     <TextView
-        android:id="@+id/countryQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="316dp"
-        android:textSize="20sp"
-        android:text="@string/country_question"
+        android:id="@+id/cityQuestion"
+        android:layout_width="378dp"
+        android:layout_height="214dp"
+        android:layout_marginTop="128dp"
+        android:text="@string/city_question"
+        android:textAlignment="center"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,13 +98,13 @@
         android:id="@+id/totalQuestions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:text="@string/total_questions"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/flagImage" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/goHome"

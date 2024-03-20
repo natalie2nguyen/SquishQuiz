@@ -22,4 +22,10 @@ public class HomeScreen extends AppCompatActivity {
         startActivity(goCountries);
     }
 
+    public void goCitiesQuiz(View view) {
+        //create the intent then launch it
+        Intent goCities = new Intent(HomeScreen.this, CitiesQuiz.class);
+        startActivity(goCities);
+    }
+
 }
