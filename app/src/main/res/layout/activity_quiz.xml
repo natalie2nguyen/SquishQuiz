@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CitiesQuiz">
+>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:text="@string/total_questions"
             android:textSize="20sp" />
 
@@ -32,13 +33,12 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/cityQuestion"
+        android:id="@+id/questionTextView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
         android:padding="1dp"
-        android:text="@string/city_question"
         android:textSize="25sp" />
 
     <LinearLayout
@@ -48,36 +48,34 @@
         android:padding="16dp">
 
         <Button
-            android:id="@+id/optionA"
+            android:id="@+id/optionButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/pink"
-            android:text="@string/vietnam" />
+            />
 
         <Button
-            android:id="@+id/optionB"
+            android:id="@+id/optionButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/teal"
-            android:text="@string/south_korea" />
+             />
 
         <Button
-            android:id="@+id/optionC"
+            android:id="@+id/optionButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/blue"
-            android:text="@string/senegal" />
+            />
 
         <Button
-            android:id="@+id/optionD"
+            android:id="@+id/optionButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/yellow"
-            android:text="@string/argentina" />
-
+            android:backgroundTint="@color/yellow" />
     </LinearLayout>
 
     <RelativeLayout

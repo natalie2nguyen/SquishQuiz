@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/questionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Question"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/option1EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Option 1"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/option2EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Option 2"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/option3EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Option 3"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/option4EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Option 4"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/correctAnswerEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correct Answer Index (0-3)"
+        android:inputType="number" />
+
+</LinearLayout>

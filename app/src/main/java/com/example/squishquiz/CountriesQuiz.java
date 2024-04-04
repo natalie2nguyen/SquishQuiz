@@ -1,11 +1,7 @@
 package com.example.squishquiz;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 
 public class CountriesQuiz extends AppCompatActivity implements View.OnClickListener{
@@ -56,53 +55,29 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
 
         loadNewQuestion();
     }
+    @Override
     public void onClick(View view) {
-        try {
-            // Check if the clicked view is the "Next" button
-            if (view.getId() == R.id.goNext) {
-                // Check if an option is selected before proceeding
-                if (selectedAnswer[currentQuestionIndex] == null|| selectedAnswer[currentQuestionIndex].isEmpty()) {
-                    throw new IllegalStateException("Please select an option before proceeding");
-                }
+        // Check if an option button was clicked
+        if (view instanceof Button) {
+            Button clickedButton = (Button) view;
+            // Record the selected answer
+            selectedAnswer[currentQuestionIndex] = clickedButton.getText().toString();
 
-                // Handle click on "Next" (ImageView)
-                if (selectedAnswer[currentQuestionIndex].equals(CountriesQuestionAnswer.correctAnswers[currentQuestionIndex])) {
-                    Log.d("select answer count", "select answer is " + selectedAnswer[currentQuestionIndex]);
-                    score++;
-                }
+            // Check if the selected answer is correct
+            if (selectedAnswer[currentQuestionIndex].equals(CountriesQuestionAnswer.correctAnswers[currentQuestionIndex])) {
+                score++;
+            }
 
-                currentQuestionIndex++;
+            // Move to the next question or finish the quiz if at the end
+            currentQuestionIndex++;
+            if (currentQuestionIndex < amountOfQuestions) {
                 loadNewQuestion();
-
-            }
-            // if the user clicks the "BACK" button
-            else if (view.getId() == R.id.goBack) {
-                if(currentQuestionIndex == 0){
-                    Toast.makeText(this,"You have reach the beginning of the quiz",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Log.d("index","currentQuestionIndex"+currentQuestionIndex);
-                    currentQuestionIndex--;
-                    loadPreviousQuestion();
-
-                }
-
-
-
             } else {
-                Button clickedButton = (Button) view;
-                // If the clicked view is not the "Next" button, it's one of the option buttons
-                selectedAnswer[currentQuestionIndex] = clickedButton.getText().toString();
-                clickedButton.setBackgroundColor(Color.BLACK);
+                finishQuiz();
             }
-        } catch (IllegalStateException e) {
-            // Handle the exception
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-
-
-
     }
+
 
 
 
@@ -149,7 +124,7 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is"+score+"out of"+amountOfQuestions)
+                .setMessage("Your Score is: "+score+" out of "+amountOfQuestions)
                 .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
                 .setCancelable(false)
                 .show();

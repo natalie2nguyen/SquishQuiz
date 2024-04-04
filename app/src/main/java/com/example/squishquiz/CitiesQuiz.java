@@ -1,17 +1,15 @@
 package com.example.squishquiz;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class CitiesQuiz extends AppCompatActivity implements View.OnClickListener{
 
@@ -47,36 +45,32 @@ public class CitiesQuiz extends AppCompatActivity implements View.OnClickListene
 
         loadNewQuestion();
     }
+    @Override
     public void onClick(View view) {
-        try {
-            // Check if the clicked view is the "Next" button
-            if (view.getId() == R.id.goNext) {
-                // Check if an option is selected before proceeding
-                if (selectedAnswer.isEmpty() || selectedAnswer == null) {
-                    throw new IllegalStateException("Please select an option before proceeding");
-                }
+        if (view instanceof Button) {
+            Button clickedButton = (Button) view;
 
-                // Handle click on "Next" (ImageView)
-                if (selectedAnswer.equals(CitiesQuestionAnswer.answers[currentQuestionIndex])) {
-                    score++;
-                }
-                currentQuestionIndex++;
+            // Record the selected answer and immediately proceed to evaluate it
+            selectedAnswer = clickedButton.getText().toString();
+
+            // Check if the selected answer is correct
+            if (selectedAnswer.equals(CitiesQuestionAnswer.answers[currentQuestionIndex])) {
+                score++;
+            }
+
+            // Reset the selected answer for the next question
+            selectedAnswer = "";
+
+            // Move to the next question or finish the quiz if at the end
+            currentQuestionIndex++;
+            if (currentQuestionIndex < amountOfQuestions) {
                 loadNewQuestion();
             } else {
-                Button clickedButton = (Button) view;
-                // If the clicked view is not the "Next" button, it's one of the option buttons
-                selectedAnswer = clickedButton.getText().toString();
-                clickedButton.setBackgroundColor(Color.BLACK);
-                //clickedButton.setTextColor(Color.WHITE);
+                finishQuiz();
             }
-        } catch (IllegalStateException e) {
-            // Handle the exception
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-
-
-
     }
+
 
 
 
@@ -117,7 +111,7 @@ public class CitiesQuiz extends AppCompatActivity implements View.OnClickListene
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is"+score+"out of"+amountOfQuestions)
+                .setMessage("Score is "+score+" out of "+amountOfQuestions)
                 .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
                 .setCancelable(false)
                 .show();
