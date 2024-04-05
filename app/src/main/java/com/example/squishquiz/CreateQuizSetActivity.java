@@ -85,7 +85,7 @@ public class CreateQuizSetActivity extends AppCompatActivity {
             options.add(option4EditText.getText().toString().trim());
 
             // Retrieve the correct answer index from the EditText
-            int correctAnswerIndex = Integer.parseInt(correctAnswerEditText.getText().toString().trim());
+            int correctAnswerIndex = Integer.parseInt(correctAnswerEditText.getText().toString().trim()) -1;
 
             // Create a Question object and add it to the questions list
             Question question = new Question(questionText, options, correctAnswerIndex);

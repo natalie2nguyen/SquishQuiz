@@ -44,7 +44,7 @@
         android:id="@+id/correctAnswerEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correct Answer Index (0-3)"
+        android:hint="Correct Answer Index (1-4)"
         android:inputType="number" />
 
 </LinearLayout>

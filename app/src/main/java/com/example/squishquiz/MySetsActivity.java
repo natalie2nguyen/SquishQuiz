@@ -1,5 +1,7 @@
 package com.example.squishquiz;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -47,6 +49,30 @@ public class MySetsActivity extends AppCompatActivity {
                     Intent intent = new Intent(MySetsActivity.this, QuizActivity.class);
                     intent.putExtra("QuizSetTitle", title);
                     startActivity(intent);
+                }
+            });
+            button.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    new AlertDialog.Builder(MySetsActivity.this)
+                            .setTitle("Delete Set")
+                            .setMessage("Do you really want to delete the set '" + title + "'?")
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Remove the set from SharedPreferences
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    Set<String> updatedSetTitles = new HashSet<>(sharedPreferences.getStringSet("QuizSetTitles", new HashSet<String>()));
+                                    updatedSetTitles.remove(title);
+                                    editor.putStringSet("QuizSetTitles", updatedSetTitles);
+                                    editor.apply();
+
+                                    // Remove the button from the layout
+                                    setsContainer.removeView(button);
+                                }
+                            })
+                            .setNegativeButton(android.R.string.no, null)
+                            .show();
+                    return true;
                 }
             });
             setsContainer.addView(button);
