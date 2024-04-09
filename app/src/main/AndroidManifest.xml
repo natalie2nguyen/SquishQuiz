@@ -22,6 +22,9 @@
             android:name=".CreateQuizSetActivity"
             android:exported="false" />
         <activity
+            android:name=".GeneralQuiz"
+            android:exported="false" />
+        <activity
             android:name=".FoodQuiz"
             android:exported="false" />
         <activity

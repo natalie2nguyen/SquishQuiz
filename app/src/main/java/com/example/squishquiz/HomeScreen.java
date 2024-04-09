@@ -55,4 +55,10 @@ public class HomeScreen extends AppCompatActivity {
         startActivity(goFood);
     }
 
+    public void goGeneralQuiz(View view) {
+        //create the intent then launch it
+        Intent goGeneral = new Intent(HomeScreen.this, GeneralQuiz.class);
+        startActivity(goGeneral);
+    }
+
 }
