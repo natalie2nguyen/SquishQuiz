@@ -76,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
+            android:onClick="goFoodQuiz"
             android:backgroundTint="@color/teal"
             android:text="@string/food_beverage"
             android:textSize="20sp" />

@@ -26,6 +26,7 @@
     <string name="singapore"> Singapore </string>
     <string name="country_question"> Which country does this flag belong to? </string>
     <string name="city_question"> Which city is known as the "City of Love" due to its romantic ambiance and iconic landmarks such as the Eiffel Tower? </string>
+    <string name="food_question"> What dish is this? </string>
 
     <string name="go_home"> Home </string>
 </resources>

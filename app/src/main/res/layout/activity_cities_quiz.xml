@@ -34,7 +34,7 @@
     <TextView
         android:id="@+id/cityQuestion"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="307dp"
         android:layout_weight="1"
         android:gravity="center"
         android:padding="1dp"
@@ -83,25 +83,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/goBack"
-            android:layout_width="57dp"
-            android:layout_height="41dp"
-            android:contentDescription="@string/back"
-            app:srcCompat="@drawable/arrow" />
-
-        <ImageView
-            android:id="@+id/goNext"
-            android:layout_width="57dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:clickable="true"
-            android:contentDescription="@string/next"
-            android:scaleX="-1"
-            app:srcCompat="@drawable/arrow" />
-
-    </RelativeLayout>
+        android:padding="16dp"/>
 
 </LinearLayout>

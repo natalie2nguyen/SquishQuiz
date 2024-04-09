@@ -8,36 +8,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-
-public class CountriesQuiz extends AppCompatActivity implements View.OnClickListener{
+public class FoodQuiz extends AppCompatActivity implements View.OnClickListener{
 
     TextView totalQuestionsTextView;
     TextView questionTextView;
     Button optionA, optionB, optionC, optionD;
     int score = 0;
-    int amountOfQuestions = CountriesQuestionAnswer.question.length;
+    int amountOfQuestions = FoodQuestionAnswer.question.length;
     int currentQuestionIndex = 0;
-    String[] selectedAnswer = new String[10];
-    ImageView flagImage;
-
-
+    String [] selectedAnswer = new String[10];
+    ImageView foodImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_countries_quiz);
+        setContentView(R.layout.activity_food_quiz);
         totalQuestionsTextView = findViewById(R.id.totalQuestions);
-        questionTextView = findViewById(R.id.countryQuestion);
+        questionTextView = findViewById(R.id.foodQuestion);
         optionA = findViewById(R.id.optionA);
         optionB = findViewById(R.id.optionB);
         optionC = findViewById(R.id.optionC);
         optionD = findViewById(R.id.optionD);
-        flagImage = findViewById(R.id.flagImage);
+        foodImage = findViewById(R.id.foodImage);
 
 
         optionA.setOnClickListener(this);
@@ -49,6 +45,7 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
 
         loadNewQuestion();
     }
+
     @Override
     public void onClick(View view) {
         // Check if an option button was clicked
@@ -58,7 +55,7 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
             selectedAnswer[currentQuestionIndex] = clickedButton.getText().toString();
 
             // Check if the selected answer is correct
-            if (selectedAnswer[currentQuestionIndex].equals(CountriesQuestionAnswer.correctAnswers[currentQuestionIndex])) {
+            if (selectedAnswer[currentQuestionIndex].equals(FoodQuestionAnswer.correctAnswers[currentQuestionIndex])) {
                 score++;
             }
 
@@ -71,9 +68,6 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
             }
         }
     }
-
-
-
 
     public void loadNewQuestion(){
 
@@ -97,12 +91,12 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
             return;
         }
         // load flag
-        flagImage.setImageResource(CountriesQuestionAnswer.flagImages[currentQuestionIndex]);
-        questionTextView.setText(CountriesQuestionAnswer.question[currentQuestionIndex]);
-        optionA.setText(CountriesQuestionAnswer.choices[currentQuestionIndex][0]);
-        optionB.setText(CountriesQuestionAnswer.choices[currentQuestionIndex][1]);
-        optionC.setText(CountriesQuestionAnswer.choices[currentQuestionIndex][2]);
-        optionD.setText(CountriesQuestionAnswer.choices[currentQuestionIndex][3]);
+        foodImage.setImageResource(FoodQuestionAnswer.foodImages[currentQuestionIndex]);
+        questionTextView.setText(FoodQuestionAnswer.question[currentQuestionIndex]);
+        optionA.setText(FoodQuestionAnswer.choices[currentQuestionIndex][0]);
+        optionB.setText(FoodQuestionAnswer.choices[currentQuestionIndex][1]);
+        optionC.setText(FoodQuestionAnswer.choices[currentQuestionIndex][2]);
+        optionD.setText(FoodQuestionAnswer.choices[currentQuestionIndex][3]);
 
 
     }
@@ -134,7 +128,5 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
         Intent goToHomePage = new Intent(this, HomeScreen.class);
         startActivity(goToHomePage);
     }
-
-
 
 }

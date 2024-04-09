@@ -49,4 +49,10 @@ public class HomeScreen extends AppCompatActivity {
         startActivity(goCities);
     }
 
+    public void goFoodQuiz(View view) {
+        //create the intent then launch it
+        Intent goFood = new Intent(HomeScreen.this, FoodQuiz.class);
+        startActivity(goFood);
+    }
+
 }
