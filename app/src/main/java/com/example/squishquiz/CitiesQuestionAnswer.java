@@ -51,4 +51,18 @@ public class CitiesQuestionAnswer {
             "Venice"
     };
 
+    public static int citiesImages[] = {
+        R.mipmap.paris,
+            R.mipmap.canberra,
+            R.mipmap.machu,
+            R.mipmap.kyoto,
+            R.mipmap.agra,
+            R.mipmap.nyc,
+            R.mipmap.berlin,
+            R.mipmap.rio,
+            R.mipmap.beijing,
+            R.mipmap.venice
+
+    };
+
 }

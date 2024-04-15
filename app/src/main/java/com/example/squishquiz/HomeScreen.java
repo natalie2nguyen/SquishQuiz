@@ -1,11 +1,16 @@
 package com.example.squishquiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.w3c.dom.Text;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -35,7 +40,23 @@ public class HomeScreen extends AppCompatActivity {
         });
 
 
+        // if the user click on the profile icon, log out
+        ImageView profileIcon = findViewById(R.id.profileIcon);
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
     }
+
+
     // go to Countries Quiz
     public void goCountriesQuiz(View view) {
         //create the intent then launch it
@@ -47,6 +68,18 @@ public class HomeScreen extends AppCompatActivity {
         //create the intent then launch it
         Intent goCities = new Intent(HomeScreen.this, CitiesQuiz.class);
         startActivity(goCities);
+    }
+
+    public void goFoodQuiz(View view) {
+        //create the intent then launch it
+        Intent goFood = new Intent(HomeScreen.this, FoodQuiz.class);
+        startActivity(goFood);
+    }
+
+    public void goGeneralQuiz(View view) {
+        //create the intent then launch it
+        Intent goGeneral = new Intent(HomeScreen.this, GeneralQuiz.class);
+        startActivity(goGeneral);
     }
 
 }

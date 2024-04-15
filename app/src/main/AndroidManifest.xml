@@ -22,6 +22,12 @@
             android:name=".CreateQuizSetActivity"
             android:exported="false" />
         <activity
+            android:name=".GeneralQuiz"
+            android:exported="false" />
+        <activity
+            android:name=".FoodQuiz"
+            android:exported="false" />
+        <activity
             android:name=".CitiesQuiz"
             android:exported="false" />
         <activity
@@ -29,6 +35,9 @@
             android:exported="false" />
         <activity
             android:name=".HomeScreen"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterScreen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

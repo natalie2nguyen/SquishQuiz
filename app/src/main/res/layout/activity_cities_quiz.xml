@@ -31,15 +31,20 @@
 
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/cityImage"
+        android:layout_width="match_parent"
+        android:layout_height="261dp"
+        app:srcCompat="@mipmap/agra" />
+
     <TextView
         android:id="@+id/cityQuestion"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:padding="1dp"
-        android:text="@string/city_question"
-        android:textSize="25sp" />
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:textAlignment="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,32 +54,36 @@
 
         <Button
             android:id="@+id/optionA"
-            android:layout_width="match_parent"
+            android:layout_width="319dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:layout_gravity="center"
             android:backgroundTint="@color/pink"
             android:text="@string/vietnam" />
 
         <Button
             android:id="@+id/optionB"
-            android:layout_width="match_parent"
+            android:layout_width="319dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:layout_gravity="center"
             android:backgroundTint="@color/teal"
             android:text="@string/south_korea" />
 
         <Button
             android:id="@+id/optionC"
-            android:layout_width="match_parent"
+            android:layout_width="319dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:layout_gravity="center"
             android:backgroundTint="@color/blue"
             android:text="@string/senegal" />
 
         <Button
             android:id="@+id/optionD"
-            android:layout_width="match_parent"
+            android:layout_width="319dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:backgroundTint="@color/yellow"
             android:text="@string/argentina" />
 
@@ -83,25 +92,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/goBack"
-            android:layout_width="57dp"
-            android:layout_height="41dp"
-            android:contentDescription="@string/back"
-            app:srcCompat="@drawable/arrow" />
-
-        <ImageView
-            android:id="@+id/goNext"
-            android:layout_width="57dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:clickable="true"
-            android:contentDescription="@string/next"
-            android:scaleX="-1"
-            app:srcCompat="@drawable/arrow" />
-
-    </RelativeLayout>
+        android:padding="16dp"/>
 
 </LinearLayout>

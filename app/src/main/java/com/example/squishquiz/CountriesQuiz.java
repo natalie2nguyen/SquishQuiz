@@ -19,8 +19,6 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
     TextView totalQuestionsTextView;
     TextView questionTextView;
     Button optionA, optionB, optionC, optionD;
-    ImageView goNext;
-    ImageView goBack;
     int score = 0;
     int amountOfQuestions = CountriesQuestionAnswer.question.length;
     int currentQuestionIndex = 0;
@@ -39,8 +37,6 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
         optionB = findViewById(R.id.optionB);
         optionC = findViewById(R.id.optionC);
         optionD = findViewById(R.id.optionD);
-        goNext = findViewById(R.id.goNext);
-        goBack = findViewById(R.id.goBack);
         flagImage = findViewById(R.id.flagImage);
 
 
@@ -48,8 +44,6 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
         optionB.setOnClickListener(this);
         optionC.setOnClickListener(this);
         optionD.setOnClickListener(this);
-        goNext.setOnClickListener(this);
-        goBack.setOnClickListener(this);
 
         totalQuestionsTextView.setText("Total Questions: "+amountOfQuestions);
 
@@ -141,23 +135,6 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
         startActivity(goToHomePage);
     }
 
-    public void loadPreviousQuestion(){
 
-        if(currentQuestionIndex < 0){
-            Toast.makeText(this,"You have reach the beginning of the quiz", Toast.LENGTH_LONG).show();
-        }
-        else{
-            flagImage.setImageResource(CountriesQuestionAnswer.flagImages[currentQuestionIndex]);
-            questionTextView.setText(CountriesQuestionAnswer.question[currentQuestionIndex]);
-            optionA.setText(CountriesQuestionAnswer.choices[currentQuestionIndex][0]);
-            optionB.setText(CountriesQuestionAnswer.choices[currentQuestionIndex][1]);
-            optionC.setText(CountriesQuestionAnswer.choices[currentQuestionIndex][2]);
-            optionD.setText(CountriesQuestionAnswer.choices[currentQuestionIndex][3]);
-        }
-
-
-
-
-    }
 
 }

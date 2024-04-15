@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountriesQuiz">
+
+    <ImageView
+        android:id="@+id/generalImage"
+        android:layout_width="409dp"
+        android:layout_height="252dp"
+        android:contentDescription="@string/flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.152"
+        app:srcCompat="@mipmap/great_gatsby" />
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="275dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877">
+
+        <Button
+            android:id="@+id/optionA"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/pink"
+            android:text="@string/vietnam" />
+
+        <Button
+            android:id="@+id/optionB"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/teal"
+            android:text="@string/south_korea" />
+
+        <Button
+            android:id="@+id/optionC"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/senegal" />
+
+        <Button
+            android:id="@+id/optionD"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/yellow"
+            android:text="@string/argentina" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/generalQuestion"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        android:text="@string/general_question"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalQuestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/total_questions"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/goHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:onClick="goHome"
+        android:contentDescription="@string/go_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_icon" />
+</androidx.constraintlayout.widget.ConstraintLayout>
