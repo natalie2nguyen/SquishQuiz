@@ -35,23 +35,23 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences preferences = getSharedPreferences("myPreferences", MODE_PRIVATE);
                 String storedPassword = preferences.getString(user + password + "data", "");
 
-                Map<String, ?> allEntries = preferences.getAll();
-
-                int numberOfAccounts = 0;
-                for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
-                    // Check if the entry is a username and password combination
-                    if (entry.getKey().endsWith("data")) {
-                        numberOfAccounts++;
-                        // If the count exceeds 5, remove the entry
-                        if (numberOfAccounts > 5) {
-                            SharedPreferences.Editor editor = preferences.edit();
-                            editor.remove(entry.getKey());
-                            editor.apply();
-                        }
-                    }
-                }
-
-                Log.i("Number of Accounts", "Total number of saved usernames and passwords: " + numberOfAccounts);
+//                Map<String, ?> allEntries = preferences.getAll();
+//
+//                int numberOfAccounts = 0;
+//                for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+//                    // Check if the entry is a username and password combination
+//                    if (entry.getKey().endsWith("data")) {
+//                        numberOfAccounts++;
+//                        // If the count exceeds 5, remove the entry
+//                        if (numberOfAccounts > 5) {
+//                            SharedPreferences.Editor editor = preferences.edit();
+//                            editor.remove(entry.getKey());
+//                            editor.apply();
+//                        }
+//                    }
+//                }
+//
+//                Log.i("Number of Accounts", "Total number of saved usernames and passwords: " + numberOfAccounts);
 
 
                 // if user doesnt have an account
