@@ -20,7 +20,7 @@ public class GeneralQuiz extends AppCompatActivity implements View.OnClickListen
     int amountOfQuestions = GeneralQuestionAnswer.questions.length;
     int currentQuestionIndex = 0;
     String[] selectedAnswer = new String[10];
-    ImageView flagImage;
+    ImageView generalImage;
 
 
 
@@ -34,7 +34,7 @@ public class GeneralQuiz extends AppCompatActivity implements View.OnClickListen
         optionB = findViewById(R.id.optionB);
         optionC = findViewById(R.id.optionC);
         optionD = findViewById(R.id.optionD);
-        // flagImage = findViewById(R.id.flagImage);
+        generalImage = findViewById(R.id.generalImage);
 
 
         optionA.setOnClickListener(this);
@@ -93,7 +93,7 @@ public class GeneralQuiz extends AppCompatActivity implements View.OnClickListen
             finishQuiz();
             return;
         }
-        //flagImage.setImageResource(GeneralQuestionAnswer.flagImages[currentQuestionIndex]);
+        generalImage.setImageResource(GeneralQuestionAnswer.generalPhotos[currentQuestionIndex]);
         questionTextView.setText(GeneralQuestionAnswer.questions[currentQuestionIndex]);
         optionA.setText(GeneralQuestionAnswer.choices[currentQuestionIndex][0]);
         optionB.setText(GeneralQuestionAnswer.choices[currentQuestionIndex][1]);

@@ -7,17 +7,16 @@
     tools:context=".CountriesQuiz">
 
     <ImageView
-        android:id="@+id/flagImage"
-        android:layout_width="484dp"
-        android:layout_height="318dp"
+        android:id="@+id/generalImage"
+        android:layout_width="409dp"
+        android:layout_height="252dp"
         android:contentDescription="@string/flag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06"
-        app:srcCompat="@mipmap/vietnam_flag_foreground" />
+        app:layout_constraintVertical_bias="0.152"
+        app:srcCompat="@mipmap/great_gatsby" />
 
     <LinearLayout
         android:layout_width="411dp"
@@ -28,7 +27,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837">
+        app:layout_constraintVertical_bias="0.877">
 
         <Button
             android:id="@+id/optionA"
@@ -69,14 +68,13 @@
 
     <TextView
         android:id="@+id/generalQuestion"
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="316dp"
-        android:textSize="20sp"
+        android:layout_marginTop="340dp"
         android:text="@string/general_question"
         android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,13 +82,13 @@
         android:id="@+id/totalQuestions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="28dp"
         android:text="@string/total_questions"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/flagImage" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/goHome"

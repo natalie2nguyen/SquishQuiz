@@ -2,6 +2,7 @@ package com.example.squishquiz;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,11 +17,11 @@ public class CitiesQuiz extends AppCompatActivity implements View.OnClickListene
     TextView totalQuestionsTextView;
     TextView questionTextView;
     Button optionA, optionB, optionC, optionD;
-    ImageView goNext;
     int score = 0;
     int amountOfQuestions = CitiesQuestionAnswer.questions.length;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
+    ImageView cityImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +33,12 @@ public class CitiesQuiz extends AppCompatActivity implements View.OnClickListene
         optionB = findViewById(R.id.optionB);
         optionC = findViewById(R.id.optionC);
         optionD = findViewById(R.id.optionD);
-        goNext = findViewById(R.id.goNext);
+        cityImage = findViewById(R.id.cityImage);
 
         optionA.setOnClickListener(this);
         optionB.setOnClickListener(this);
         optionC.setOnClickListener(this);
         optionD.setOnClickListener(this);
-        goNext.setOnClickListener(this);
 
 
         totalQuestionsTextView.setText("Total Questions: "+amountOfQuestions);
@@ -93,6 +93,7 @@ public class CitiesQuiz extends AppCompatActivity implements View.OnClickListene
             finishQuiz();
             return;
         }
+        cityImage.setImageResource(CitiesQuestionAnswer.citiesImages[currentQuestionIndex]);
         questionTextView.setText(CitiesQuestionAnswer.questions[currentQuestionIndex]);
         optionA.setText(CitiesQuestionAnswer.choices[currentQuestionIndex][0]);
         optionB.setText(CitiesQuestionAnswer.choices[currentQuestionIndex][1]);

@@ -69,13 +69,14 @@
 
     <TextView
         android:id="@+id/countryQuestion"
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="316dp"
-        android:textSize="20sp"
+        android:layout_marginTop="324dp"
         android:text="@string/country_question"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

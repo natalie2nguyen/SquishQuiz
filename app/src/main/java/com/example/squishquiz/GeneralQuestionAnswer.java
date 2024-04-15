@@ -39,4 +39,18 @@ public class GeneralQuestionAnswer {
             {"K2", "Mount Everest", "Mount McKinley (Denali)", "Kilimanjaro"},
             {"Buzz Aldrin", "Neil Armstrong", "John Glenn", "Yuri Gagarin"}
     };
+
+    public static int generalPhotos[] = {
+        R.mipmap.to_kill,
+            R.mipmap.planets,
+            R.mipmap.gold,
+            R.mipmap.mona_lisa,
+            R.mipmap.titanic,
+            R.mipmap.ocean,
+            R.mipmap.great_gatsby,
+            R.mipmap.telephone,
+            R.mipmap.mountain,
+            R.mipmap.moon
+
+    };
 }

@@ -23,13 +23,29 @@
             android:paddingTop="20dp"
             android:textSize="25sp" />
 
-        <ImageView
-            android:id="@+id/home"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/home_icon" />
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/SquishQuiz"
+            android:layout_marginLeft="30dp">
+
+            <ImageView
+                android:id="@+id/profileIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/account_icon_black" />
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 
@@ -39,17 +55,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/which_set"
-        android:layout_marginBottom="20dp"
         android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:padding="40dp">
+        android:padding="20dp">
 
         <Button
             android:id="@+id/countries"
@@ -64,7 +80,7 @@
             android:id="@+id/cities"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:backgroundTint="@color/yellow"
             android:onClick="goCitiesQuiz"
             android:text="@string/cities"
@@ -75,9 +91,9 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:onClick="goFoodQuiz"
+            android:layout_marginTop="40dp"
             android:backgroundTint="@color/teal"
+            android:onClick="goFoodQuiz"
             android:text="@string/food_beverage"
             android:textSize="20sp" />
 
@@ -85,10 +101,10 @@
             android:id="@+id/general"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:backgroundTint="@color/orange"
-            android:text="@string/general"
             android:onClick="goGeneralQuiz"
+            android:text="@string/general"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -98,14 +114,13 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="15dp">
+        android:padding="25dp">
 
         <Button
             android:id="@+id/mySetsButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:backgroundTint="@color/blue"
-            android:layout_marginRight="10dp"
             android:text="@string/my_sets" />
 
         <Button
@@ -121,7 +136,6 @@
             android:id="@+id/pointsButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
             android:backgroundTint="@color/blue"
             android:text="@string/points" />
 
