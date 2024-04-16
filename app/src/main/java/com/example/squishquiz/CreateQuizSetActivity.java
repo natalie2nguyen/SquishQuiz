@@ -1,10 +1,12 @@
 package com.example.squishquiz;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,8 @@ public class CreateQuizSetActivity extends AppCompatActivity {
     private EditText titleEditText;
     private List<Question> questions;
     private LinearLayout questionContainer;
+
+    ImageView homeIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,15 @@ public class CreateQuizSetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveQuizSet();
+            }
+        });
+
+        homeIcon = findViewById(R.id.homeIcon);
+        homeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goHome = new Intent(CreateQuizSetActivity.this, HomeScreen.class);
+                startActivity(goHome);
             }
         });
     }
