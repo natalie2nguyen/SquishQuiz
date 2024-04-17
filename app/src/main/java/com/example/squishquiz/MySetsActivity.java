@@ -25,9 +25,13 @@ public class MySetsActivity extends AppCompatActivity {
 
         setsContainer = findViewById(R.id.setsContainer);
 
-        // Retrieve the quiz set titles from SharedPreferences
+        // Get the logged-in user's username
+        SharedPreferences preferences = getSharedPreferences("myPreferences", MODE_PRIVATE);
+        String loggedInUser = preferences.getString("loggedInUser", "");
+
+        // Retrieve the quiz set titles for the logged-in user from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("QuizSets", MODE_PRIVATE);
-        Set<String> quizSetTitles = sharedPreferences.getStringSet("QuizSetTitles", new HashSet<String>());
+        Set<String> quizSetTitles = sharedPreferences.getStringSet(loggedInUser + "_QuizSetTitles", new HashSet<String>());
 
         // Find the quiz set button template
         Button buttonTemplate = findViewById(R.id.quizSetButtonTemplate);
@@ -61,9 +65,9 @@ public class MySetsActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     // Remove the set from SharedPreferences
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    Set<String> updatedSetTitles = new HashSet<>(sharedPreferences.getStringSet("QuizSetTitles", new HashSet<String>()));
+                                    Set<String> updatedSetTitles = new HashSet<>(sharedPreferences.getStringSet(loggedInUser + "_QuizSetTitles", new HashSet<String>()));
                                     updatedSetTitles.remove(title);
-                                    editor.putStringSet("QuizSetTitles", updatedSetTitles);
+                                    editor.putStringSet(loggedInUser + "_QuizSetTitles", updatedSetTitles);
                                     editor.apply();
 
                                     // Remove the button from the layout
@@ -78,9 +82,9 @@ public class MySetsActivity extends AppCompatActivity {
             setsContainer.addView(button);
         }
     }
+
     public void goHome(View view) {
         Intent goToHomePage = new Intent(this, HomeScreen.class);
         startActivity(goToHomePage);
     }
-
 }

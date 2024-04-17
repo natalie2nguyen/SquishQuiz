@@ -1,5 +1,6 @@
 package com.example.squishquiz;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -54,11 +55,28 @@ public class CreateQuizSetActivity extends AppCompatActivity {
                 saveQuizSet();
             }
         });
+
+        View homeIcon = findViewById(R.id.homeIcon);
+        homeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goHome = new Intent(CreateQuizSetActivity.this, HomeScreen.class);
+                startActivity(goHome);
+            }
+        });
     }
+    
+    
 
     private void saveQuizSet() {
         // Retrieve the title from the EditText
         String title = titleEditText.getText().toString().trim();
+
+        // Check if the title is empty
+        if (title.isEmpty()) {
+            titleEditText.setError("Please enter a title");
+            return;
+        }
 
         // Clear the questions list
         questions.clear();
@@ -78,14 +96,37 @@ public class CreateQuizSetActivity extends AppCompatActivity {
 
             // Retrieve the question text and options from the EditTexts
             String questionText = questionEditText.getText().toString().trim();
-            List<String> options = new ArrayList<>();
-            options.add(option1EditText.getText().toString().trim());
-            options.add(option2EditText.getText().toString().trim());
-            options.add(option3EditText.getText().toString().trim());
-            options.add(option4EditText.getText().toString().trim());
+            String option1 = option1EditText.getText().toString().trim();
+            String option2 = option2EditText.getText().toString().trim();
+            String option3 = option3EditText.getText().toString().trim();
+            String option4 = option4EditText.getText().toString().trim();
+            String correctAnswer = correctAnswerEditText.getText().toString().trim();
 
-            // Retrieve the correct answer index from the EditText
-            int correctAnswerIndex = Integer.parseInt(correctAnswerEditText.getText().toString().trim()) -1;
+            // Check if any of the fields are empty
+            if (questionText.isEmpty() || option1.isEmpty() || option2.isEmpty() || option3.isEmpty() || option4.isEmpty() || correctAnswer.isEmpty()) {
+                questionEditText.setError("Please fill in all the fields");
+                return;
+            }
+
+            // Validate the correct answer index
+            int correctAnswerIndex;
+            try {
+                correctAnswerIndex = Integer.parseInt(correctAnswer) - 1;
+                if (correctAnswerIndex < 0 || correctAnswerIndex > 3) {
+                    correctAnswerEditText.setError("Please enter a valid correct answer index (1-4)");
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                correctAnswerEditText.setError("Please enter a valid correct answer index (1-4)");
+                return;
+            }
+
+            // Create a list of options
+            List<String> options = new ArrayList<>();
+            options.add(option1);
+            options.add(option2);
+            options.add(option3);
+            options.add(option4);
 
             // Create a Question object and add it to the questions list
             Question question = new Question(questionText, options, correctAnswerIndex);
@@ -95,17 +136,20 @@ public class CreateQuizSetActivity extends AppCompatActivity {
         // Create a QuizSet object with the title and questions
         QuizSet quizSet = new QuizSet(title, questions);
 
+        // Get the logged-in user's username
+        SharedPreferences preferences = getSharedPreferences("myPreferences", MODE_PRIVATE);
+        String loggedInUser = preferences.getString("loggedInUser", "");
+
         // Save the quiz set using SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("QuizSets", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String json = GsonHelper.toJson(quizSet);
-        editor.putString(title, json);
+        editor.putString(loggedInUser + "_" + title, json);
 
-        // Save the quiz set title separately
-        Set<String> quizSetTitles = sharedPreferences.getStringSet("QuizSetTitles", new HashSet<String>());
+        // Save the quiz set title separately for the logged-in user
+        Set<String> quizSetTitles = sharedPreferences.getStringSet(loggedInUser + "_QuizSetTitles", new HashSet<String>());
         quizSetTitles.add(title);
-        editor.putStringSet("QuizSetTitles", quizSetTitles);
-
+        editor.putStringSet(loggedInUser + "_QuizSetTitles", quizSetTitles);
         editor.apply();
 
         // Finish the activity

@@ -13,9 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RegisterScreen extends AppCompatActivity {
     EditText username;
     EditText password;
-
     Button registerButton;
-
     ImageView goBack;
 
     @Override
@@ -35,16 +33,22 @@ public class RegisterScreen extends AppCompatActivity {
                 String newPassword = password.getText().toString();
 
                 SharedPreferences.Editor editor = preferences.edit();
-                // save the username and password
+                // Save the username and password
                 editor.putString(newUser + newPassword + "data", newUser);
-                editor.commit();
+
+                // Create a new Profile object for the user
+                Profile profile = new Profile(newUser, newPassword, 0);
+                String profileJson = GsonHelper.toJson(profile);
+                editor.putString(newUser + "profile", profileJson);
+
+                editor.apply();
 
                 Intent goToLogin = new Intent(RegisterScreen.this, MainActivity.class);
                 startActivity(goToLogin);
             }
         });
 
-        // if the user click on the profile icon, log out
+        // If the user clicks on the profile icon, log out
         goBack = findViewById(R.id.goBack);
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +57,5 @@ public class RegisterScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 }

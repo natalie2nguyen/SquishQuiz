@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,10 +41,21 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         // Retrieve the selected quiz set title from the intent extras
         String quizSetTitle = getIntent().getStringExtra("QuizSetTitle");
 
-        // Retrieve the quiz set from SharedPreferences based on the title
+        // Get the logged-in user's username
+        SharedPreferences preferences = getSharedPreferences("myPreferences", MODE_PRIVATE);
+        String loggedInUser = preferences.getString("loggedInUser", "");
+
+        // Retrieve the quiz set from SharedPreferences based on the title and logged-in user
         SharedPreferences sharedPreferences = getSharedPreferences("QuizSets", MODE_PRIVATE);
-        String json = sharedPreferences.getString(quizSetTitle, "");
-        quizSet = GsonHelper.fromJson(json);
+        String json = sharedPreferences.getString(loggedInUser + "_" + quizSetTitle, "");
+        if (!json.isEmpty()) {
+            quizSet = GsonHelper.fromJson(json);
+        } else {
+            // Handle the case when the quiz set is not found
+            Toast.makeText(this, "Quiz set not found", Toast.LENGTH_SHORT).show();
+            finish(); // Finish the activity if the quiz set is not found
+            return;
+        }
 
         currentQuestionIndex = 0;
         score = 0;
