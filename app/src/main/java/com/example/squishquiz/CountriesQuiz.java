@@ -4,12 +4,15 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -24,6 +27,28 @@ public class CountriesQuiz extends AppCompatActivity implements View.OnClickList
     int currentQuestionIndex = 0;
     String[] selectedAnswer = new String[10];
     ImageView flagImage;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.logout ){
+            Intent intent = new Intent(CountriesQuiz.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(id == R.id.homeIcon){
+            Intent intent = new Intent(CountriesQuiz.this, HomeScreen.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
 

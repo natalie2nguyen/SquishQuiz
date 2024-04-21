@@ -4,11 +4,14 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -22,6 +25,29 @@ public class CitiesQuiz extends AppCompatActivity implements View.OnClickListene
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
     ImageView cityImage;
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.logout ){
+            Intent intent = new Intent(CitiesQuiz.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(id == R.id.homeIcon){
+            Intent intent = new Intent(CitiesQuiz.this, HomeScreen.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

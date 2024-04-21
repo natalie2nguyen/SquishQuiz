@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashSet;
@@ -17,6 +20,28 @@ import java.util.Set;
 
 public class MySetsActivity extends AppCompatActivity {
     private LinearLayout setsContainer;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.logout ){
+            Intent intent = new Intent(MySetsActivity.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(id == R.id.homeIcon){
+            Intent intent = new Intent(MySetsActivity.this, HomeScreen.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

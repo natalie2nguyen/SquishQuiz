@@ -19,9 +19,11 @@
         app:srcCompat="@mipmap/great_gatsby" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="411dp"
         android:layout_height="275dp"
         android:orientation="vertical"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -36,7 +38,8 @@
             android:layout_marginStart="50dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/pink"
-            android:text="@string/vietnam" />
+            android:text="@string/vietnam"
+            android:layout_marginTop="10dp"/>
 
         <Button
             android:id="@+id/optionB"
@@ -70,11 +73,15 @@
         android:id="@+id/generalQuestion"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:padding="10dp"
         android:text="@string/general_question"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,16 +97,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/goHome"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:onClick="goHome"
-        android:contentDescription="@string/go_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

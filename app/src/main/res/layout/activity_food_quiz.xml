@@ -25,7 +25,8 @@
             android:layout_marginStart="50dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/pink"
-            android:text="@string/vietnam" />
+            android:text="@string/vietnam"
+            android:layout_marginTop="10dp"/>
 
         <Button
             android:id="@+id/optionB"
@@ -62,6 +63,9 @@
         android:text="@string/food_question"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
@@ -81,27 +85,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/goHome"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:onClick="goHome"
-        android:contentDescription="@string/go_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_icon" />
-
-    <ImageView
         android:id="@+id/foodImage"
         android:layout_width="305dp"
         android:layout_height="250dp"
-        android:layout_marginTop="72dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
+        app:layout_constraintVertical_bias="0.141"
         app:srcCompat="@mipmap/pho" />
 </androidx.constraintlayout.widget.ConstraintLayout>

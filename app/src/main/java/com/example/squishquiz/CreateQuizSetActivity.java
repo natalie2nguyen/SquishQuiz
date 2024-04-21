@@ -3,11 +3,14 @@ package com.example.squishquiz;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -19,6 +22,28 @@ public class CreateQuizSetActivity extends AppCompatActivity {
     private EditText titleEditText;
     private List<Question> questions;
     private LinearLayout questionContainer;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.logout ){
+            Intent intent = new Intent(CreateQuizSetActivity.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(id == R.id.homeIcon){
+            Intent intent = new Intent(CreateQuizSetActivity.this, HomeScreen.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

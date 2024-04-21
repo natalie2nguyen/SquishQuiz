@@ -20,6 +20,7 @@
         app:srcCompat="@mipmap/vietnam_flag_foreground" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="411dp"
         android:layout_height="275dp"
         android:orientation="vertical"
@@ -71,10 +72,12 @@
         android:id="@+id/countryQuestion"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
         android:text="@string/country_question"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:padding="10dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,16 +95,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/flagImage" />
 
-    <ImageView
-        android:id="@+id/goHome"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:onClick="goHome"
-        android:contentDescription="@string/go_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

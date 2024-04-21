@@ -20,15 +20,6 @@
             android:text="@string/total_questions"
             android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/goHome"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:contentDescription="@string/go_home"
-            android:onClick="goHome"
-            app:srcCompat="@drawable/home_icon" />
-
     </RelativeLayout>
 
     <ImageView
@@ -43,6 +34,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="20sp"
+        android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textAlignment="center" />
 

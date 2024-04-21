@@ -11,41 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/SquishQuiz"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-black"
-            android:text="@string/app_name"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
-            android:textSize="25sp" />
-
-        <ImageView
-            android:id="@+id/profileIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignEnd="@id/SquishQuiz"
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="-102dp"
-            android:src="@drawable/logout_black" />
-
-
-    </RelativeLayout>
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/whichSet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="50dp"
         android:fontFamily="sans-serif-medium"
+        android:padding="20dp"
         android:text="@string/which_set"
-        android:textSize="20sp" />
+        android:textSize="25sp"
+        android:textFontWeight="300"
+        android:textAlignment="center"
+        android:textColor="@color/blue"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,13 +40,13 @@
             android:backgroundTint="@color/pink"
             android:onClick="goCountriesQuiz"
             android:text="@string/countries"
-            android:textSize="20sp" />
+            android:textSize="20sp"/>
 
         <Button
             android:id="@+id/cities"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:backgroundTint="@color/yellow"
             android:onClick="goCitiesQuiz"
             android:text="@string/cities"
@@ -77,7 +56,7 @@
             android:id="@+id/foodBev"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:backgroundTint="@color/teal"
             android:onClick="goFoodQuiz"
             android:text="@string/food_beverage"
@@ -87,7 +66,7 @@
             android:id="@+id/general"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:backgroundTint="@color/orange"
             android:onClick="goGeneralQuiz"
             android:text="@string/general"
