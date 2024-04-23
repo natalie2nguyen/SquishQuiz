@@ -81,14 +81,7 @@ public class CreateQuizSetActivity extends AppCompatActivity {
             }
         });
 
-        View homeIcon = findViewById(R.id.homeIcon);
-        homeIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goHome = new Intent(CreateQuizSetActivity.this, HomeScreen.class);
-                startActivity(goHome);
-            }
-        });
+
     }
     
     

@@ -64,21 +64,6 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-
-        // if the user click on the profile icon, log out
-//        ImageView profileIcon = findViewById(R.id.profileIcon);
-//        profileIcon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomeScreen.this, MainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
-
-
-
-
     }
 
 

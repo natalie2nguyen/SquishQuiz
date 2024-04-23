@@ -4,7 +4,7 @@ public class FoodQuestionAnswer {
 
     public static String question[] = {
         "What is the main ingredient in traditional Greek moussaka?",
-            "Which fruit is used to make the Italian dessert tiramisu?",
+            "Which ingredient is used to make the Italian dessert tiramisu?",
             "What is the primary ingredient in the cocktail \"Margarita\"?",
             "In which country did the dish sushi originate?",
             "What type of pastry is used to make a croissant?",

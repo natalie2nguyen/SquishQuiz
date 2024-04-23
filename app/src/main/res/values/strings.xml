@@ -12,6 +12,7 @@
     <string name="addSets"> Create Sets </string>
     <string name="points"> My Points </string>
     <string name="total_questions"> Total Questions </string>
+    <string name="total_questions_ten"> Total Questions: 10 </string>
     <string name="flag"> Flag </string>
     <string name="next"> Go next </string>
     <string name="back"> Go back </string>

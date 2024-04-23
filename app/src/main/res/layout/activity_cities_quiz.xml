@@ -25,16 +25,15 @@
     <ImageView
         android:id="@+id/cityImage"
         android:layout_width="match_parent"
-        android:layout_height="261dp"
+        android:layout_height="240dp"
         app:srcCompat="@mipmap/agra" />
 
     <TextView
         android:id="@+id/cityQuestion"
-        android:layout_width="380dp"
+        android:layout_width="375dp"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="20sp"
-        android:layout_margin="10dp"
         android:layout_gravity="center"
         android:textAlignment="center" />
 

@@ -3,11 +3,14 @@ package com.example.squishquiz;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +25,27 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private int score;
     private String selectedAnswer = "";
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.logout ){
+            Intent intent = new Intent(QuizActivity.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(id == R.id.homeIcon){
+            Intent intent = new Intent(QuizActivity.this, HomeScreen.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

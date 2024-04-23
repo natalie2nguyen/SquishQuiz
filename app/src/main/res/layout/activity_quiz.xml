@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="@string/total_questions"
+            android:text="@string/total_questions_ten"
             android:textSize="20sp" />
 
     </RelativeLayout>
@@ -26,8 +26,7 @@
     <TextView
         android:id="@+id/questionTextView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-
+        android:layout_height="300dp"
         android:gravity="center"
         android:padding="1dp"
         android:textSize="25sp" />
@@ -35,7 +34,7 @@
 
     <LinearLayout
         android:layout_width="411dp"
-        android:layout_height="275dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
